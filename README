@@ -1,0 +1,58 @@
+This is a _original_ version (with some annotations) of the 
+StarWarsCrawler program for Assignment 2, COMP6700.2015.
+It simulates the opening of Star Wars films
+(and some of their parodies) as a crawling text from the close view
+to "infinity of cosmos"  
+
+The README file (this one) explains how to _easily_ compile and run this
+application without creating a project in an IDE of your choice.
+
+If you decide to use an IDE (which you should) to work on this project
+you will have to import the source files (including the properties and resources)
+into the IDE of your choice. Netbeans and IntelliJ IDEA support JavaFX
+projects quite well, so that starting the project from these sources
+should be relatively easy. Eclipse provides a poorer approach. When you
+create a (would be JavaFX) project in Eclipse, one has to mark the
+parent class of the main class which you name when going through the
+wizard dialogue: the parent class should (provide the full name)
+javafx.application.Application. This should make Eclipse aware of
+the JavaFX resources requirements.
+
+The Makefile allows one to compile and run the program without relying on an IDE:
+
+1. To compile to the package structure simply run (on the command line):
+
+make compile
+
+2. To run the program:
+
+make run
+
+3. Makefile also can create the API-like documentation of the source code
+(in docs directory) using the javadoc utility; to (re-)generate the 
+documentation for this project, run
+
+make doc
+
+4. Simply:
+
+make
+
+5. make clean will remove the bytecode (in bin) and all docs
+
+
+Important: the JavaFX run-time environment may be different on your system
+(eg. you can have a different version, AND/OR it can be located in a different
+path). In such case, you need to uncomment (remove the hash) the first line
+in the Makefile and replace the value string (to which the variable JAVAFX_PATH
+is assigned) to the absolute path to jfxrt.jar file. To find this path,
+use the command 
+
+locate jfxrt.jar
+
+and examine the output to make appropriate changes in the Makefile.
+
+If you will use an IDE (and I advise to do it), it can discover the location
+of the necessary libraries (including JavaFX) itself. Latest SDK 8 releases
+from Oracle have JavaFX integrated with Java Run-Time; this is not the case
+for Open JDK, to which JavaFX must be added using an approach like above.
